@@ -13,33 +13,59 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Yext's Fashion Warehouse</title>
     <meta name="description" content="Luc's Fashion Warehouse Home Page">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     {{>head}}
     {{!-- <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> --}}
     <!--Replace with your tailwind.css once created-->
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet"
 </head>
-  <div class="container mx-auto px-4">
-    <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
+  <body>
+    {{>navbar}}
+    {{>home}}
+    {{>footer}}
+<script>
+  //Humburger menu script
+  const btn = document.querySelector("button.mobile-menu-button");
+  const menu = document.querySelector(".mobile-menu");
 
-        {{>navbar}}
+  btn.addEventListener("click", () => {
+      menu.classList.toggle("-translate-x-full");
+      menu.classList.toggle("-ml-48");
+  });
 
-      <div class="w-full m-0 p-0 bg-cover bg-bottom" style="background-image:url('/images/luxurystore.jpg'); height: 60vh; max-height:460px;"></div>
 
-        <section class="bg-white py-8">
-            <div class="container py-8 px-6 mx-auto">
+  //slider script
+    var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
 
-                <div class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-2xl mb-8">Welcome to the Warehouse!</div>
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
 
-                <p class="mt-8 mb-8">Looking to upgrade your wardrobe this summer? We've got you covered.</p>
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
 
-                <p class="mb-8">Browse through our site for luxury shoes, tops, and bottoms!</p>
-            </div>
-        </section>
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  })
+</script>
 
-        {{>image-banners}}
 
-      {{>footer}}
 
-    </body>
-  </div>
+  </body>
+  
 </html>

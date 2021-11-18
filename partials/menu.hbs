@@ -1,0 +1,44 @@
+<nav class="border-b">
+    <div class="w-full container mx-auto px-4 flex flex-wrap items-center justify-between relative">
+        <div class="lg:hidden flex items-center">
+            <button class="outline-none mobile-menu-button">
+                <svg
+                    class="w-6 h-6 text-gray-500"
+                    x-show="!showMenu"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <ul class="list-reset lg:flex lf:items-center text-black text-base mobile-menu absolute lg:static top-full left-0 bg-white z-10 w-full lg:w-auto px-4 lg:px-0 transition-all transform -translate-x-full lg:-translate-x-0 -ml-48 lg:ml-0" x-data="{selected:null}">
+            <li class=""><a class="px-1.5 xl:px-5 py-3 inline-block border-b-2 border-transparent transition-all ease-in-out hover:text-yellow-500 hover:border-yellow-500" href="index.html">Home</a></li>
+            <li class=""><a class="px-1.5 xl:px-5 py-3 inline-block border-b-2 border-transparent transition-all ease-in-out hover:text-yellow-500 hover:border-yellow-500" href="#">Products</a></li>
+            <li class="relative group"><a class="px-1.5 xl:px-5 py-3 inline-block border-b-2 border-transparent transition-all ease-in-out hover:text-yellow-500 hover:border-yellow-500" href="about.html">About Us <span class="fas fa-chevron-down text-sm hidden lg:inline-block"></span></a> 
+                <button type="button" class="p-3 float-right lg:hidden focus:outline-none" @click="selected !== 1 ? selected = 1 : selected = null">
+                    <span class="fas fa-chevron-down"></span>
+                </button>
+                <ul class="relative top-0 left-0 lg:absolute lg:top-full bg-white lg:shadow z-10 w-full lg:w-60 overflow-hidden transition-all max-h-0 lg:max-h-64 lg:h-auto duration-700 lg:invisible lg:group-hover:visible lg:pb-5" style="" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+                    <li class="px-4 py-3"><a class="hover:text-yellow-500" href="#">Company</a></li>
+                    <li class="px-4 py-3"><a class="hover:text-yellow-500" href="#">Our Team</a></li>
+                    <li class="px-4 py-3"><a class="hover:text-yellow-500" href="#">Testimonial</a></li>
+                </ul>
+            </li>
+            <li class=""><a class="px-1.5 xl:px-5 py-3 inline-block border-b-2 border-transparent transition-all ease-in-out hover:text-yellow-500 hover:border-yellow-500" href="#">Blogs</a></li>
+            <li class=""><a class="px-1.5 xl:px-5 py-3 inline-block border-b-2 border-transparent transition-all ease-in-out hover:text-yellow-500 hover:border-yellow-500" href="#">Affilate Marketing</a></li>
+            <li class=""><a class="px-1.5 xl:px-5 py-3 inline-block border-b-2 border-transparent transition-all ease-in-out hover:text-yellow-500 hover:border-yellow-500" href="#">Our Stories</a></li>
+            <li class=""><a class="px-1.5 xl:px-5 py-3 inline-block border-b-2 border-transparent transition-all ease-in-out hover:text-yellow-500 hover:border-yellow-500" href="#">Faq's</a></li>
+            <li class=""><a class="px-1.5 xl:px-5 py-3 inline-block border-b-2 border-transparent transition-all ease-in-out hover:text-yellow-500 hover:border-yellow-500" href="#">Contacts</a></li>
+        </ul>
+        <div class="ml-auto">
+            <a class="" href="#">
+               
+            </a>
+        </div>
+    </div>
+</nav>
